@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image;
     CheckBox male;
     CheckBox female;
+    ToggleButton  togglebutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,24 @@ public class MainActivity extends AppCompatActivity {
 
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
+        togglebutton = findViewById(R.id.toggleButton);
 
-        male.setOnClickListener(new View.OnClickListener() {
+        togglebutton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    image.setVisibility(View.INVISIBLE);
+                    text.setText("Image is hidden");
+                }
+                else {
+                    image.setVisibility(View.VISIBLE);
+                    text.setText("iamge is showed");
+                }
+            }
+        });
+
+        /*male.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -71,6 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 image.setImageResource(R.drawable.a);
 
             }
-        });
+        });*/
     }
 }
