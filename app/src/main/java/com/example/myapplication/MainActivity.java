@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     EditText name;
-
     String userName;
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         text = findViewById(R.id.textname);
 
+        image = findViewById(R.id.imageView);
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                userName = name.getText().toString();
-                text.setText(userName);
+                image.setImageResource(R.drawable.a);
 
             }
         });
