@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     EditText name;
     String userName;
     ImageView image;
+    CheckBox male;
+    CheckBox female;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,37 @@ public class MainActivity extends AppCompatActivity {
         text = findViewById(R.id.textname);
 
         image = findViewById(R.id.imageView);
+
+        male = findViewById(R.id.male);
+        female = findViewById(R.id.female);
+
+        male.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if(male.isChecked()){
+                    text.setText("male");
+                    female.setChecked(false);
+                }
+                else {
+                    text.setText("What is your gender");
+                }
+            }
+        });
+
+        female.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                if(female.isChecked()){
+                    text.setText("female");
+                    male.setChecked(false);
+                }
+                else {
+                    text.setText("What is your gender");
+                }
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
