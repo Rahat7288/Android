@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,14 +14,17 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView text;
-    //TextView text2;
+   /* TextView text;
+    TextView text2;
 
     Button button;
     EditText name;
@@ -31,21 +36,76 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String countries[];
-    ArrayAdapter<String> adapter;
+    ArrayAdapter<String> adapter;*/
+
+    private RecyclerView recyclerView;
+
+    private recyclerAdapter adapter;
+
+    private ArrayList<String> countryNameList = new ArrayList<String>();
+    private ArrayList<String>detaisList = new ArrayList<String>();
+    private ArrayList<Integer>imageList = new ArrayList<Integer>();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+        countryNameList.add("Bangladesh");
+        countryNameList.add("Germany");
+        countryNameList.add("Canada");
+
+        detaisList.add("this is bangladesh");
+        detaisList.add("this is Germany");
+        detaisList.add("this is Canada");
+
+        imageList.add(R.drawable.bd);
+        imageList.add(R.drawable.germany);
+        imageList.add(R.drawable.canada);
+
+
+        adapter = new recyclerAdapter(countryNameList,detaisList,imageList,MainActivity.this);
+        recyclerView.setAdapter(adapter);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
-        listView = findViewById(R.id.list);
+       /* listView = findViewById(R.id.list);
         countries = getResources().getStringArray(R.array.Countries);
 
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
 
          
 
@@ -104,6 +164,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });*/
+
+
+
+
 
         /*male.setOnClickListener(new View.OnClickListener() {
 
