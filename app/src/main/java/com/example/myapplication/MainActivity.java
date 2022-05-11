@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -23,28 +24,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-   /* TextView text;
-    TextView text2;
 
-    Button button;
-    EditText name;
-    String userName;
-    ImageView image;
-    CheckBox male;
-    CheckBox female;
-    ToggleButton  togglebutton;
 
-    ListView listView;
-    String countries[];
-    ArrayAdapter<String> adapter;*/
+    GridView gridView;
 
-    private RecyclerView recyclerView;
+    ArrayList<String> text = new ArrayList<>();
+    ArrayList<Integer> image = new ArrayList<>();
 
-    private recyclerAdapter adapter;
-
-    private ArrayList<String> countryNameList = new ArrayList<String>();
-    private ArrayList<String>detaisList = new ArrayList<String>();
-    private ArrayList<Integer>imageList = new ArrayList<Integer>();
 
 
 
@@ -53,156 +39,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        //grideView
 
-        countryNameList.add("Bangladesh");
-        countryNameList.add("Germany");
-        countryNameList.add("Canada");
+        gridView = findViewById(R.id.gridView);
 
-        detaisList.add("this is bangladesh");
-        detaisList.add("this is Germany");
-        detaisList.add("this is Canada");
+        fillArray();
 
-        imageList.add(R.drawable.bd);
-        imageList.add(R.drawable.germany);
-        imageList.add(R.drawable.canada);
 
 
-        adapter = new recyclerAdapter(countryNameList,detaisList,imageList,MainActivity.this);
-        recyclerView.setAdapter(adapter);
 
 
+    }
 
+    public void fillArray(){
+        text.add("bird");
+        text.add("cat");
+        text.add("chicken");
+        text.add("dog");
+        text.add("fish");
+        text.add("monky");
+        text.add("rabbit");
+        text.add("sheep");
+        text.add("lion");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-       /* listView = findViewById(R.id.list);
-        countries = getResources().getStringArray(R.array.Countries);
-
-
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
-
-        listView.setAdapter(adapter);*/
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      /*  name = findViewById(R.id.name);
-        button = findViewById(R.id.button);
-        text = findViewById(R.id.textname);
-
-        image = findViewById(R.id.imageView);
-
-        male = findViewById(R.id.male);
-        female = findViewById(R.id.female);
-        togglebutton = findViewById(R.id.toggleButton);
-
-        togglebutton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(isChecked){
-                    image.setVisibility(View.INVISIBLE);
-                    text.setText("Image is hidden");
-                }
-                else {
-                    image.setVisibility(View.VISIBLE);
-                    text.setText("iamge is showed");
-                }
-            }
-        });*/
-
-
-
-
-
-        /*male.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if(male.isChecked()){
-                    text.setText("male");
-                    female.setChecked(false);
-                }
-                else {
-                    text.setText("What is your gender");
-                }
-            }
-        });
-
-        female.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                if(female.isChecked()){
-                    text.setText("female");
-                    male.setChecked(false);
-                }
-                else {
-                    text.setText("What is your gender");
-                }
-            }
-        });
-
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                image.setImageResource(R.drawable.a);
-
-            }
-        });*/
+        image.add(R.drawable.bird);
+        image.add(R.drawable.cat);
+        image.add(R.drawable.chicken);
+        image.add(R.drawable.dog);
+        image.add(R.drawable.fish);
+        image.add(R.drawable.monky);
+        image.add(R.drawable.rabbit);
+        image.add(R.drawable.sheep);
+        image.add(R.drawable.lion);
     }
 }

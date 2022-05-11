@@ -1,4 +1,4 @@
-package com.example.myapplication;
+/*package com.example.myapplication;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -66,3 +66,6 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Countr
         }
     }
 }
+
+
+ */
