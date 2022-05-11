@@ -2,14 +2,17 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -26,12 +29,58 @@ public class MainActivity extends AppCompatActivity {
     CheckBox female;
     ToggleButton  togglebutton;
 
+    ListView listView;
+    String countries[];
+    ArrayAdapter<String> adapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        listView = findViewById(R.id.list);
+        countries = getResources().getStringArray(R.array.Countries);
 
-        name = findViewById(R.id.name);
+
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
+
+        listView.setAdapter(adapter);
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /*  name = findViewById(R.id.name);
         button = findViewById(R.id.button);
         text = findViewById(R.id.textname);
 
@@ -54,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     text.setText("iamge is showed");
                 }
             }
-        });
+        });*/
 
         /*male.setOnClickListener(new View.OnClickListener() {
 

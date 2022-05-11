@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="textview">TextView</string>
+    <string name="app_name">ListViewExample</string>
+    <string name="Countries">
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+        <item>Bangladesh</item>
+    </string>
+
 </resources>
+
