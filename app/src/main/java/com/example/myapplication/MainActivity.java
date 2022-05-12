@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,16 +25,46 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
+    Button button1;
+    Button button2;
 
+    int counter = 0;
+    
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        textView = findViewById(R.id.textView);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
 
 
-        Log.d("Message", "onCreate");
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                counter = counter + 1;
+                textView.setText(""+ counter);
+
+            }
+        });
+        
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getApplicationContext(),SecondActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+
+        Log.d("Message", "First Activity onCreate");
 
 
     }
@@ -41,36 +72,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("Message", "onDestroy");
+        Log.d("Message", "First Activity onDestroy");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("Message", "onPause");
+        Log.d("Message", "First Activity onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("Message", "onStop");
+        Log.d("Message", "First Activity onStop");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("Message", "onStart");
+        Log.d("Message", "First Activity onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("Message", "onResume");
+        Log.d("Message", "First Activity onResume");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("Message", "onRestart");
+        Log.d("Message", "First Activity onRestart");
     }
 }
