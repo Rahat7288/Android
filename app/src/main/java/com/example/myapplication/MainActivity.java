@@ -37,31 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        textView = findViewById(R.id.textView);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
 
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                counter = counter + 1;
-                textView.setText(""+ counter);
-
-            }
-        });
-        
-        button2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(getApplicationContext(),SecondActivity.class);
-                startActivity(i);
-
-            }
-        });
 
 
         Log.d("Message", "First Activity onCreate");
