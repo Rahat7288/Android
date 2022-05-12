@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -26,50 +27,50 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    GridView gridView;
-
-    ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> image = new ArrayList<>();
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //grideView
 
-        gridView = findViewById(R.id.gridView);
-
-        fillArray();
-
-
-
+        Log.d("Message", "onCreate");
 
 
     }
 
-    public void fillArray(){
-        text.add("bird");
-        text.add("cat");
-        text.add("chicken");
-        text.add("dog");
-        text.add("fish");
-        text.add("monky");
-        text.add("rabbit");
-        text.add("sheep");
-        text.add("lion");
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Message", "onDestroy");
+    }
 
-        image.add(R.drawable.bird);
-        image.add(R.drawable.cat);
-        image.add(R.drawable.chicken);
-        image.add(R.drawable.dog);
-        image.add(R.drawable.fish);
-        image.add(R.drawable.monky);
-        image.add(R.drawable.rabbit);
-        image.add(R.drawable.sheep);
-        image.add(R.drawable.lion);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Message", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Message", "onStop");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Message", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Message", "onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("Message", "onRestart");
     }
 }

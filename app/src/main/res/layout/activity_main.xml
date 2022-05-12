@@ -8,11 +8,4 @@
     android:background="#F8FBFB"
 
     android:gravity="center_horizontal"
-    tools:context=".MainActivity">
-
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:numColumns="3" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".MainActivity"/>
