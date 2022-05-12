@@ -26,8 +26,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
-    Button button1;
-    Button button2;
+    Button buttonStart;
+    Button buttonStop;
 
     int counter = 0;
     
@@ -37,6 +37,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buttonStart = findViewById(R.id.buttonStart);
+        buttonStop = findViewById(R.id.buttonStop);
+
+        buttonStart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(),ServicesExample.class);
+                startActivity(i);
+
+            }
+
+        });
+
+        buttonStop.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
 
